@@ -1,0 +1,1 @@
+Aquí encontrarás un listado de todos los ejercicios de SQL que he ido encontrando en las redes con sus enunciados y la solución que yo les he dado, quizás no sea la mejor respuesta pero es a la que he llegado yo, cualquiera puede comentar la suya si así lo desea.
