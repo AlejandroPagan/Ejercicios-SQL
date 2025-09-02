@@ -1,0 +1,45 @@
+# Ejercicio: Partes en producción no finalizadas
+
+Tesla está investigando **cuellos de botella en la producción** y necesita tu ayuda para extraer los datos relevantes.  
+Escribe una consulta para determinar **qué partes han comenzado el proceso de ensamblaje pero aún no están terminadas**.
+
+---
+
+## Suposiciones
+- La tabla `parts_assembly` contiene todas las partes actualmente en producción, cada una en distintas etapas del ensamblaje.  
+- Una parte **no finalizada** es aquella que **no tiene fecha de finalización (`finish_date`)**.  
+---
+
+## Tabla `parts_assembly`
+
+| Nombre de columna | Tipo     |
+|-----------------|---------|
+| part             | string  |
+| finish_date      | datetime|
+| assembly_step    | integer |
+
+**Ejemplo de datos:**
+
+| part   | finish_date         | assembly_step |
+|--------|-------------------|---------------|
+| battery | 01/22/2022 00:00:00 | 1           |
+| battery | 02/22/2022 00:00:00 | 2           |
+| battery | 03/22/2022 00:00:00 | 3           |
+| bumper  | 01/22/2022 00:00:00 | 1           |
+| bumper  | 02/22/2022 00:00:00 | 2           |
+| bumper  |                     | 3           |
+| bumper  |                     | 4           |
+
+---
+
+## Ejemplo de salida esperada
+
+| part   | assembly_step |
+|--------|---------------|
+| bumper | 3             |
+| bumper | 4             |
+
+**Explicación:**  
+- Los bumpers en los pasos 3 y 4 son las únicas partes **no finalizadas**, ya que **no tienen fecha de finalización registrada**.
+
+> Nota: El conjunto de datos que estés consultando puede variar; este es solo un ejemplo.
