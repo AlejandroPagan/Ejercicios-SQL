@@ -1,0 +1,40 @@
+# Ejercicio: Candidatos para Data Science
+
+Dada una tabla de candidatos y sus habilidades, tu tarea es encontrar los candidatos más adecuados para un puesto abierto de **Data Science**. Quieres encontrar candidatos que sean competentes en **Python**, **Tableau** y **PostgreSQL**.  
+
+## Objetivo
+Escribe una consulta para listar los candidatos que posean **todas** las habilidades requeridas para el puesto. Ordena el resultado por **ID de candidato** de forma ascendente.  
+
+## Suposición
+- No hay duplicados en la tabla `candidates`.  
+
+## Tabla `candidates`
+| Nombre de columna | Tipo    |
+|-----------------|---------|
+| candidate_id    | integer |
+| skill           | varchar |
+
+## Ejemplo de entrada
+
+| candidate_id | skill      |
+|--------------|-----------|
+| 123          | Python    |
+| 123          | Tableau   |
+| 123          | PostgreSQL|
+| 234          | R         |
+| 234          | PowerBI   |
+| 234          | SQL Server|
+| 345          | Python    |
+| 345          | Tableau   |
+
+## Ejemplo de salida
+
+| candidate_id |
+|--------------|
+| 123          |
+
+## Explicación
+- El candidato 123 aparece porque tiene las habilidades **Python**, **Tableau** y **PostgreSQL**.  
+- El candidato 345 no se incluye porque le falta una de las habilidades requeridas (**PostgreSQL**).  
+
+> Nota: El conjunto de datos que estás consultando puede tener entradas y salidas diferentes; este es solo un ejemplo.
