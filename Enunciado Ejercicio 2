@@ -1,0 +1,58 @@
+# Ejercicio: Páginas de Facebook sin likes
+
+Se te proporcionan dos tablas que contienen datos sobre **Facebook Pages** y sus respectivos likes (es decir, "Me gusta" en una página de Facebook).
+
+## Objetivo
+Escribe una consulta para devolver los **IDs de las páginas de Facebook que no tienen ningún like**.  
+El resultado debe ordenarse de manera ascendente por `page_id`.
+
+---
+
+## Tablas
+
+### Tabla `pages`
+
+| Nombre de columna | Tipo    |
+|-----------------|---------|
+| page_id         | integer |
+| page_name       | varchar |
+
+**Ejemplo de datos:**
+
+| page_id | page_name                |
+|---------|--------------------------|
+| 20001   | SQL Solutions            |
+| 20045   | Brain Exercises          |
+| 20701   | Tips for Data Analysts   |
+
+---
+
+### Tabla `page_likes`
+
+| Nombre de columna | Tipo     |
+|-----------------|----------|
+| user_id         | integer  |
+| page_id         | integer  |
+| liked_date      | datetime |
+
+**Ejemplo de datos:**
+
+| user_id | page_id | liked_date           |
+|---------|---------|--------------------|
+| 111     | 20001   | 04/08/2022 00:00:00 |
+| 121     | 20045   | 03/12/2022 00:00:00 |
+| 156     | 20001   | 07/25/2022 00:00:00 |
+
+---
+
+## Ejemplo de salida esperada
+
+| page_id |
+|---------|
+| 20701   |
+
+**Explicación:**  
+- La página 20701 no tiene likes, por eso aparece en el resultado.  
+- Las otras páginas tienen al menos un like, por lo que no se incluyen.
+
+> Nota: El conjunto de datos que estés consultando puede variar; este es solo un ejemplo.
